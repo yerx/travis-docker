@@ -3,5 +3,15 @@ services:
   - docker
 
 scripts:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t yer/ci-cd .
   - docker images yer/ci-cd
+
+# before-deploy:
+#   - docker login -u  -p
+
+deploy:
+  provider: script
+  script: docker push yerx/travis-docker
+  on:
+    branch: master

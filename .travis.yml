@@ -3,12 +3,11 @@ services:
   - docker
 
 scripts:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t yer/ci-cd .
   - docker images yer/ci-cd
 
-# before-deploy:
-#   - docker login -u  -p
+before-deploy:
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
 deploy:
   provider: script

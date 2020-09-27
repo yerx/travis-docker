@@ -2,21 +2,6 @@ sudo: required
 services:
   - docker
 
-# scripts:
-#   - docker build -t yer/ci-cd .
-#   - docker images yer/ci-cd
-
-# before-deploy:
-#   # - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-
-# deploy:
-#   provider: script
-#   script: docker push yerx/travis-docker
-#   edge: true
-#   on:
-#     branch: master
-
 before_script:
   - echo "no tests"
 

@@ -7,7 +7,8 @@ scripts:
   - docker images yer/ci-cd
 
 before-deploy:
-  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  # - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 deploy:
   provider: script

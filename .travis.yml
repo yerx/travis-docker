@@ -23,7 +23,7 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t yerx/ci-cid .
-  - docker tag yerx/ci-cd
+  - docker tag yerx/ci-cd yerx/ci-cd
 
 # task to perform after the process is successful
 after_success:
